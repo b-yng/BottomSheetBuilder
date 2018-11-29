@@ -2,13 +2,13 @@ package com.github.rubensousa.bottomsheetbuilder.sample;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.BottomSheetBehavior;
-import android.support.design.widget.CoordinatorLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements BottomSheetItemCl
         }
 
         mShowingSimpleDialog = true;
-        mBottomSheetDialog = new BottomSheetBuilder(this)
+        mBottomSheetDialog = new BottomSheetBuilder(this, coordinatorLayout)
                 .setMode(BottomSheetBuilder.MODE_LIST)
                 .setAppBarLayout(appBarLayout)
                 .addTitleItem("Custom title")
