@@ -1,0 +1,24 @@
+apply plugin: 'maven-publish'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.somewearlabs'
+                artifactId = 'bottomsheetbuilder'
+                version = '1.6.1'
+            }
+        }
+
+        repositories {
+            maven {
+                url "https://somewear-artifacts.appspot.com"
+                credentials {
+                    username = somewearArtifactsAdminUsername
+                    password = somewearArtifactsAdminPassword
+                }
+            }
+        }
+    }
+}
